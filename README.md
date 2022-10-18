@@ -1,2 +1,2 @@
 # Details
-Algorithm that used in code is A* serch
+Algorithm that used in code is A* search
