@@ -1,5 +1,5 @@
 # Details
-Algorithm that used in code is A* search 
+Algorithm that used in code is A* search **just for study**
 
 ## A* search with maze 
 - If you need the performance not the shortest path, just remove seld.d (level of node) update
@@ -29,3 +29,4 @@ start = [
 
 The shortest move is 31
 >But it takes an hour to find that
+
