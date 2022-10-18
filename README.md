@@ -13,7 +13,7 @@ more than that, it will take a long time
 
 for test 
 ```
-"x" for blank positon
+### "x" for blank position ###
 
 start = [ 
   [8 ,6 ,7],
