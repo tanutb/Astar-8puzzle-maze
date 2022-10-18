@@ -2,9 +2,9 @@
 Algorithm that used in code is A* search
 
 ## A* search with maze 
--if you need the peformance not shortest path just remove seld.d (level of node) update 
+- if you need the peformance not shortest path just remove seld.d (level of node) update 
 but it can make the it error and bug
--Just update level to cost to make it shortest path and prevent bugs
+- Just update level to cost to make it shortest path and prevent bugs
 
 ## 8 puzzle 
 - it can find the shortest move within a few second if it's around 20 move only
