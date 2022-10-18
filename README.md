@@ -27,5 +27,5 @@ start = [
 ]
 ```
 
-the shortest move is 31
->But it thake an hour to find that
+The shortest move is 31
+>But it takes an hour to find that
