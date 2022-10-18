@@ -1,12 +1,23 @@
-
+#https://deniz.co/8-puzzle-solver/
 from pq import priorityQueue
 from Node import Node
-
+import json
+from json.decoder import JSONDecodeError
 start = [
-    [1 ,5 ,2],
-    [8 ,6 ,7],
-    ["x" ,4 ,3],
+ [8 ,6 ,7],
+ [2 ,5 ,4],
+ [3 ,"x" ,1]
 ]
+filename = 'data.json'
+
+with open(filename, "r") as file:
+    data = json.load(file)
+
+# start = [
+#  [1 ,8 ,3],
+#  [6 ,2 ,7],
+#  [4,5,"x"]
+# ]
 goal = [
     [1 ,2 ,3],
     [4 ,5 ,6],
@@ -19,38 +30,48 @@ pq.push(Start_Node)
 path = []
 checked = []
 count = 1000
-while not pq.empty():
-    n = pq.pop()
-
-    for i in n.Gen_node(n):
+found = False
+for i in range(len(data)):
+    if data[i]['Start'] == start and data[i]['Goal'] == goal:
+        path = data[i]['path']
+        found = True
+        break
+if not found :
+    while not pq.empty():
+        n = pq.pop()
         a = list(map(lambda x: x.data, pq.heap))
         b = list(map(lambda x: x.data, checked))
-        if i.data not in a and i.data not in b:
-            pq.push(i)
 
-    checked.append(n)
-    if len(checked) >= count :
-        count += 1000
-        print(count)
+        for i in n.Gen_node(n):
+            if i.data not in a and i.data not in b:
+                pq.push(i)
 
-    if len(checked) >= 181440 :
-        print("Something might wrong")
-        break
+        checked.append(n)
+        if len(checked) >= count :
+            count += 1000
+            print(count)
 
-    if n.data == goal :
-        
-        par = n
+        if len(checked) >= 181440 :
+            print("Something might wrong")
+            break
 
-        while par != 0:
+        if n.data == goal :
+            
+            par = n
 
-            path.append(par.data)
+            while par != 0:
 
-            par = par.parent
+                path.append(par.data)
 
-        break
+                par = par.parent
 
-del path[-1]
-path = path[::-1]
+            break
+
+    del path[-1]
+    path = path[::-1]
+
+import copy
+path_save = copy.deepcopy(path)
 
 for i in path:
     print("=============")
@@ -104,6 +125,25 @@ while True :
         pygame.time.delay(100)    
 
     if n == goal :
+        if not found:
+            new = {
+                "Start": start,
+                "Goal": goal,
+                "path": path_save}
+            filename = 'data.json'
+            # json_object = json.dumps(new, indent=4)
+    
+            # with open(filename, "w") as outfile:
+            #     outfile.write(json_object)
+
+            with open(filename, "r") as file:
+                data = json.load(file)
+
+            data.append(new)
+
+            with open(filename, "w") as file:
+                json.dump(data, file)
+
         print("END")
         break
 
