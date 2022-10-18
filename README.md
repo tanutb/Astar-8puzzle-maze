@@ -1,5 +1,5 @@
 # Details
-Algorithm that used in code is A* search
+Algorithm that used in code is A* search 
 
 ## A* search with maze 
 - If you need the performance not the shortest path, just remove seld.d (level of node) update
