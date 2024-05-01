@@ -1,7 +1,7 @@
 # Details
 use **pygame** for visualization 
 <br>use **heapq** for priorityQueue 
-<br> Algorithm that used in code is A* search
+<br> Algorithm used in code is A* search
 
 ## A* search with maze 
 - If you need the performance not the shortest path, just remove seld.d (level of node) update
