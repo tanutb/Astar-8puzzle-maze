@@ -13,9 +13,9 @@ def d(a,b):
 #---------------------------------- Set up screen -----------------------------------------
 
 print ("Setting up screen")
-width = 1000
-height = 1000
-cell_size = 10                                                  #Change this to change grid size
+width = 700
+height = 700
+cell_size = 13                                                  #Change this to change grid size
 screen = pygame.display.set_mode((width, height))
 screen.fill((255, 255, 255))
 
@@ -32,12 +32,14 @@ for i in range(1, math.floor(height / cell_size) + 1):
 
 #---------------------------------- Set up World ------------------------------------------
 print ("Conjuring the Matrix")
+wi = math.floor(width / cell_size) + 1
+he = math.floor(height / cell_size) + 1
 
-end = (np.random.randint(80,100), np.random.randint(80,100))                                                        # Goal State
+end = (np.random.randint(wi - wi//4,wi), np.random.randint(he - he//4,he))                                                        # Goal State
 
 w = World(width, height,cell_size)
 #wall_pos = [(0,5),(1,5),(2,5),(3,5),(4,5),(6,7)]
-wall_pos = w.random_wall(40)                                        # Percentage of Walls in Grid
+wall_pos = w.random_wall(50)                                        # Percentage of Walls in Grid
 
 if end in wall_pos:
     wall_pos.remove(end)
@@ -94,6 +96,7 @@ while(1):
         d = list(map(lambda x : x.pos,open_list))
         b = list(map(lambda x : x.pos,close_list))
         if n.pos not in d and n.pos not in b:
+            pygame.time.delay(20)  
             print(list(map(lambda x:x.pos,n.neighbor()))) 
             for i in n.neighbor():
                 if i.pos not in wall_pos:
