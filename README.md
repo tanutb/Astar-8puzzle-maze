@@ -9,6 +9,10 @@ The maze solving implementation allows the algorithm to navigate through a maze 
   ```
 - A* search algorithm will find the shortest path from the starting position to the goal position.
 - Pygame will display the maze and the progress of the algorithm, providing a visual representation of the pathfinding process.
+## Issue 
+Sometimes, A* may not provide the optimal path due to its heuristic function struggling with the Euclidean distance in a grid maze, which can lead the agent to choose diagonal paths that may not be optimal. However, this issue could also be related to my implementation, which may have suboptimal elements or bugs in certain parts
+
+## Visualization  
 
 # 8 Puzzle Problem
 The 8 puzzle problem involves rearranging a scrambled set of tiles numbered 1 through 8 within a 3x3 grid to reach a goal configuration. The A* search algorithm is used to find the shortest sequence of moves to reach the goal state.
@@ -40,4 +44,6 @@ start = [
 ]
 ```
 The shortest move is 31
+
+## Visualization  
 
