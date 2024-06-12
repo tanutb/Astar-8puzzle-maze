@@ -13,6 +13,7 @@ The maze solving implementation allows the algorithm to navigate through a maze 
 Sometimes, A* may not provide the optimal path due to its heuristic function struggling with the Euclidean distance in a grid maze, which can lead the agent to choose diagonal paths that may not be optimal. However, this issue could also be related to my implementation, which may have suboptimal elements or bugs in certain parts
 
 ## Visualization  
+<img src="https://github.com/tanutb/Astar-8puzzle-maze/blob/main/gif/maze.gif" width="400" height="400">
 
 # 8 Puzzle Problem
 The 8 puzzle problem involves rearranging a scrambled set of tiles numbered 1 through 8 within a 3x3 grid to reach a goal configuration. The A* search algorithm is used to find the shortest sequence of moves to reach the goal state.
@@ -46,4 +47,4 @@ start = [
 The shortest move is 31
 
 ## Visualization  
-
+<img src="https://github.com/tanutb/Astar-8puzzle-maze/blob/main/gif/8puzzle.gif" width="400" height="400">
