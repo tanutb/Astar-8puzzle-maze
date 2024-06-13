@@ -28,7 +28,7 @@ The 8 puzzle problem involves rearranging a scrambled set of tiles numbered 1 th
 - The start and end position can change in   ``` board.py ``` in ```line 6``` and ```line 21``` respectively 
 
 ## Testing
-To ensure the correctness and performance of the implementations, various tests have been conducted. Notably, the 8 puzzle problem solution was found to take approximately an hour for configurations with 31 moves. Further optimizations may be explored to enhance performance.
+To ensure the correctness and performance of the implementations, various tests have been conducted. The 8 puzzle problem in some solution was found and take approximately an hour for configurations with 31 moves.
 ```
 ### "x" for blank position ###
 
